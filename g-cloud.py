@@ -24,9 +24,9 @@ def download_file(url, destination):
             out_file.write(data)
             bytes_so_far += len(data)
             progress = bytes_so_far * 100 / file_size
-            print_color(f"Progress: {progress:.2f}%", end='\r')
-
-        print()  # Move to the next line after download completion
+            print_color(f"Progress: {progress:.2f}%", end='', color='\033[94m')
+            print('\033[0m', end='\r')  # Reset color and move to the beginning of the line
+            print()  # Move to the next line after download completion
 
 def extract_tar(file_path, output_dir):
     # Function to extract a tar.gz file to a specified directory
