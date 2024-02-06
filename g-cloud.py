@@ -2,6 +2,7 @@ import os
 import subprocess
 import urllib.request
 import tarfile
+import re
 
 def print_color(text, color='\033[94m'):
     print(f"{color}{text}\033[0m")
@@ -37,6 +38,18 @@ def append_to_bashrc(file_path, text):
     with open(file_path, "a") as file:
         file.write(text)
 
+def get_latest_version():
+    # Function to get the latest version number of Google Cloud SDK
+    version_url = "https://dl.google.com/dl/cloudsdk/channels/rapid/downloads"
+    with urllib.request.urlopen(version_url) as response:
+        page_content = response.read().decode('utf-8')
+        match = re.search(r'google-cloud-sdk-(\d+\.\d+\.\d+)-linux-arm\.tar\.gz', page_content)
+        if match:
+            return match.group(1)
+        else:
+            print_color("Unable to determine the latest version. Please check the Google Cloud SDK download page.")
+            exit(1)
+
 # Script starts here
 print_color("This script was coded by sanatani-hacker")
 
@@ -55,13 +68,14 @@ for command in commands_to_run:
     run_command(command, cwd=home_directory)
 
 # Google Cloud SDK download and setup
-google_cloud_url = "https://dl.google.com/dl/cloudsdk/channels/rapid/downloads/google-cloud-cli-458.0.1-linux-arm.tar.gz"
-google_cloud_destination = "google-cloud-cli-458.0.1-linux-arm.tar.gz"
+latest_version = get_latest_version()
+google_cloud_url = f"https://dl.google.com/dl/cloudsdk/channels/rapid/downloads/google-cloud-sdk-{latest_version}-linux-arm.tar.gz"
+google_cloud_destination = f"google-cloud-sdk-{latest_version}-linux-arm.tar.gz"
 
-print_color(f"Downloading Google Cloud SDK from {google_cloud_url}")
+print_color(f"Downloading Google Cloud SDK version {latest_version} from {google_cloud_url}")
 download_file(google_cloud_url, google_cloud_destination, cwd=home_directory)
 
-print_color("Decompressing Google Cloud SDK file")
+print_color(f"Decompressing Google Cloud SDK version {latest_version} file")
 extract_tar(os.path.join(home_directory, google_cloud_destination), home_directory)
 
 print_color("Adding the gcloud CLI to your path")
@@ -76,3 +90,4 @@ alias_command = "alias google='gcloud alpha cloud-shell ssh'"
 append_to_bashrc(bashrc_path, alias_command)
 
 print_color("Now exit and reopen your Termux, then type 'google' to start Google shell")
+    
