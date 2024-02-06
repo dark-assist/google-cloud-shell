@@ -14,7 +14,7 @@ cd google-cloud-shell
 ```
 Run the python script
 ```bash
-python3 Google-cloud-shell.py
+python3 g-cloud.py
 ```
 That's all the script will done everything automatically you just need to connect you any Google account with the cloud shell......
 
