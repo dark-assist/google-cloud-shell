@@ -32,8 +32,7 @@ print_color("This script was coded by sanatani-hacker")
 
 # List of commands to run
 commands_to_run = [
-    ["apt", "update", "-y"],
-    ["apt", "upgrade", "-y"],
+    ["apt", "update", "-y"]
     ["pkg", "up", "-y", "openssl", "curl", "python", "openssh"]
 ]
 
