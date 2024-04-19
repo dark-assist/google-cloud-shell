@@ -5,7 +5,7 @@ echo "Telegram:-https://t.me/temuxhacking"
 apt update >/dev/null
 apt install curl python openssh openssl-y >/dev/null
 
-curl -O https://dl.google.com/dl/cloudsdk/channels/rapid/downloads/google-cloud-cli-470.0.0-linux-arm.tar.gz > .down.txt
+curl -O https://dl.google.com/dl/cloudsdk/channels/rapid/downloads/google-cloud-cli-470.0.0-linux-arm.tar.gz
 echo "Decompressing Google Cloud SDK file"
 tar -xvzf google-cloud-cli-470.0.0-linux-arm.tar.gz
 echo "Adding the gcloud CLI to your path"
