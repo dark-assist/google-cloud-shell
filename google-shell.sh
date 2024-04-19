@@ -16,7 +16,7 @@ sleep 5
 echo "Initializing the gcloud CLI"
 ./google-cloud-sdk/bin/gcloud init
 
-echo "alias google='gcloud alpha cloud-shell ssh'" > .bashrc
+echo "alias google='gcloud alpha cloud-shell ssh'" >> .bashrc
 clear
 echo "Now exit and reopen your Termux, then type 'google' to start Google shell" 
 sleep 7
