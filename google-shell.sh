@@ -3,7 +3,7 @@ cd $HOME
 echo "Made by @sanatani_x_anonymous"
 echo "Telegram:-https://t.me/temuxhacking"
 apt update >/dev/null
-apt install curl python openssh openssl-y >/dev/null
+apt install curl python openssh openssl -y
 
 curl -O https://dl.google.com/dl/cloudsdk/channels/rapid/downloads/google-cloud-cli-470.0.0-linux-arm.tar.gz
 echo "Decompressing Google Cloud SDK file"
