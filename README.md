@@ -23,5 +23,7 @@ That's all the script will done everything automatically you just need to connec
 https://github.com/dark-assist/Cloudpc/assets/108276894/da981b98-127f-4140-901b-385014275031
 
 
+<img src="https://raw.githubusercontent.com/dark-assist/Cloudpc/main/Screenshot_20240507_122228.jpg">
+If this type of anything come just hit Enter.
 
 Thanks for using my repo ❤️❤️
