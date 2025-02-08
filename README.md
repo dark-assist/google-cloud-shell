@@ -1,6 +1,6 @@
 # google-cloud-shell
 
-This is a simple python script to setup google cloud shell in termux...
+This is a simple bash script to setup google cloud shell in termux...
 
 # installation command
 clone the repo
